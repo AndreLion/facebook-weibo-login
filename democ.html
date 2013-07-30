@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Facebook and Weibo Login via Open API OAuth</title>
+		<link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.css" />
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="dropdown login-wrap">
+			<button type="button" class="btn btn-primary btn-large dropdown-toggle" data-toggle="dropdown">Login</button>
+			<div class="dropdown-menu" role="menu">
+				<div class="facebook_connect_btn">
+					<span class="icon-container"><i class="icon icon-f"></i></span>
+					<span class="text-container">Login with Facebook</span>
+				</div>
+				<div class="separator shift">
+					<span class="text">or</span>
+					<hr />
+				</div>
+				<div id="wb_connect_btn">Loading</div>
+			</div>
+		</div>
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script src="http://getbootstrap.com/dist/js/bootstrap.js"></script>
+		<script>
+			(function(){
+				var FACEBOOK_APP_ID = 'your_facebook_id',
+					YOUR_WEIBO_APP_KEY = '0000000000',
+					ready = {
+					facebook : false,
+					weibo : false
+				};
+				window.fbAsyncInit = function() {
+					FB.init({
+						appId      : FACEBOOK_APP_ID,
+						channelUrl : '//YOUR_APP_DOMAIN/channel.html',
+						status     : true,
+						cookie     : true,
+						xfbml      : true
+					});
+
+					FB.Event.subscribe('auth.authResponseChange', function(response) {
+						if (response.status === 'connected') {
+							console.log('Welcome!  Fetching your information.... ');
+							FB.api('/me', function(response) {
+								console.log('Good to see you, ' + response.name + '.');
+								console.log(response);
+							});
+						} else if (response.status === 'not_authorized') {
+							FB.login();
+						} else {
+							FB.login();
+						}
+					});
+				};
+				//async load weibo sdk
+				$.getScript('http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey='+YOUR_WEIBO_APP_KEY,function(){
+					WB2.anyWhere(function(W){
+						W.widget.connectButton({
+							id: "wb_connect_btn",	
+							type:"2,2",
+							callback : {
+								login:function(o){	//登录后的回调函数
+									console.log('loged in');
+									console.log(arguments);
+								},	
+								logout:function(){	//退出后的回调函数
+									console.log('loged out');
+									console.log(arguments);
+								}
+							}
+						});
+					});
+				});
+				//async load facebook sdk
+				(function(d){
+					var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+					if (d.getElementById(id)) {return;}
+					js = d.createElement('script'); js.id = id; js.async = true;
+					js.src = "//connect.facebook.net/en_US/all.js";
+					ref.parentNode.insertBefore(js, ref);
+				}(document));
+				$('.dropdown-toggle').dropdown();
+				$('.facebook_connect_btn').on('click',function(ev){
+					FB.login(function(response){
+						if (response.authResponse) {
+							console.log('login success');
+						}else{
+							console.log('login deny');
+						}
+						console.log(arguments);
+					});
+				});
+			})();
+		</script>
+	</body>
+</html>
+
