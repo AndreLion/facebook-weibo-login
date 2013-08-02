@@ -1,6 +1,6 @@
 Facebook and Weibo Login
 ====================
-**a.k.a. FWL.** A combiniation of Facebook and [Weibo](http://open.weibo.com/widget/js#connect) javascript SDK with 3rd party login function.
+**a.k.a. FWL.** A combiniation of [Facebook](https://developers.facebook.com/docs/reference/dialogs/oauth/) and [Weibo](http://open.weibo.com/widget/js#connect) javascript SDK with 3rd party login function.
 
 Please check [Demo](http://last.mile.navigator.erip.me/github/facebook-weibo-login/democ.html) first.
 
@@ -29,15 +29,15 @@ All you have to do is paste a snippet javascript and css code into your website,
 
 Something you should prepare beforehand:
 
-1. Your own website required a register/login function.
-2. Create a Facebook app and write down  it's ID.
+1. Your own website requires register/login function.
+2. Create a Facebook app and write down  it's ID. [link](https://developers.facebook.com/apps/)
 3. Create a Webio app and write down it's ID. [link](http://open.weibo.com/wiki/%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97)
 4. A user table in database used for storing 3rd party user informatin.
 5. Skill of write backend language and rewrite CSS to adapt your own style.
 
 How to deploy FWL:
 
-1. Check the [Demo](http://last.mile.navigator.erip.me/github/facebook-weibo-login/democ.html) and it's source code.
+1. Check the [Demo](http://last.mile.navigator.erip.me/github/facebook-weibo-login/democ.html) and it's [source code](https://github.com/AndreLion/facebook-weibo-login/blob/master/democ.html).
 2. Copy the HTML code and paste them to the right place on your page.
 3. Copy the Javascript code and paste them before the closing of body tag.
 4. (Optional)Add the code in CSS file into your stylesheet, or write your own stylesheet to fit your website style.
