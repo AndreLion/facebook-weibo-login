@@ -2,6 +2,8 @@ Facebook and Weibo Login
 ====================
 **a.k.a. FWL.** A combiniation of Facebook and [Weibo](http://open.weibo.com/widget/js#connect) javascript SDK with 3rd party login function.
 
+Please check [Demo](http://last.mile.navigator.erip.me/github/facebook-weibo-login/democ.html) first.
+
 This is a javascript component combined with Facebook SDK and Weibo SDK. Help you deploy 3rd party website login function to your own website.
 
 Login with 3rd party website members will help you:
@@ -33,20 +35,22 @@ Something you should prepare beforehand:
 4. A user table in database used for storing 3rd party user informatin.
 5. Skill of write backend language and rewrite CSS to adapt your own style.
 
-How to use FWL:
+How to deploy FWL:
 
-1. Check the Demo and it's source code.
+1. Check the [Demo](http://last.mile.navigator.erip.me/github/facebook-weibo-login/democ.html) and it's source code.
 2. Copy the HTML code and paste them to the right place on your page.
 3. Copy the Javascript code and paste them before the closing of body tag.
 4. (Optional)Add the code in CSS file into your stylesheet, or write your own stylesheet to fit your website style.
 5. (Optional)If you use Javascript module loader, package the Javascript code into a module.
 6. (Optional)Optimize your code, make them graceful.
 
+Besides, jQuery and bootstrap(button and dropdown component) are used in the demo because they are convenient for developing. You can use them or replace them with other JS framework or write your own code.
+
 FAQs:
 
 >Q: How can I register as Weibo developer if I can't read Chinese?
 >
->A: Message me.
+>A: Ask me.
 >
 >Q: How can I register as Facebook developer if I can't read English?
 >
