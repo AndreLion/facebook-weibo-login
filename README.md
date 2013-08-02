@@ -33,7 +33,7 @@ Something you should prepare beforehand:
 4. A user table in database used for storing 3rd party user informatin.
 5. Skill of write backend language and rewrite CSS to adapt your own style.
 
-How to user:
+How to use FWL:
 
 1. Check the Demo and it's source code.
 2. Copy the HTML code and paste them to the right place on your page.
@@ -41,3 +41,14 @@ How to user:
 4. (Optional)Add the code in CSS file into your stylesheet, or write your own stylesheet to fit your website style.
 5. (Optional)If you use Javascript module loader, package the Javascript code into a module.
 6. (Optional)Optimize your code, make them graceful.
+
+FAQs:
+
+Q: How can I register as Weibo developer if I can't read Chinese?
+A: Message me.
+
+Q: How can I register as Facebook developer if I can't read English?
+A: Ask your English teacher.
+
+Q: I can't visit Facebook!
+A: Ask Schoolmaster Fang.
