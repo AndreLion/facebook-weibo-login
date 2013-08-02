@@ -37,7 +37,7 @@ How to use FWL:
 
 1. Check the Demo and it's source code.
 2. Copy the HTML code and paste them to the right place on your page.
-3. Copy the Javascript code and paste them before </body> tag.
+3. Copy the Javascript code and paste them before the closing of body tag.
 4. (Optional)Add the code in CSS file into your stylesheet, or write your own stylesheet to fit your website style.
 5. (Optional)If you use Javascript module loader, package the Javascript code into a module.
 6. (Optional)Optimize your code, make them graceful.
