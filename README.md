@@ -1,6 +1,6 @@
 Facebook and Weibo Login
 ====================
-**a.k.a. FWL**
+**a.k.a. FWL.** A combiniation of Facebook and Weibo javascript SDK with 3rd party login function.
 
 This is a javascript component combined with Facebook SDK and Weibo SDK. Help you deploy 3rd party website login function to your own website.
 
