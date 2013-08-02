@@ -60,7 +60,7 @@ FAQs:
 >
 >Q: I can't visit Facebook!
 >
->A: Ask Schoolmaster Fang.
+>A: Ask [Schoolmaster Fang](http://en.wikipedia.org/wiki/Fang_Binxing).
 >
 >Q: How to logout?
 >
