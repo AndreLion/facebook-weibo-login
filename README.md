@@ -7,7 +7,7 @@ This is a javascript component combined with Facebook SDK and Weibo SDK. Help yo
 Login with 3rd party website members will help you:
 
 1. One click register, easily attract new users;
-2. No need to mantaining/store/encrypt user password in database;
+2. No need to mantain/store/encrypt user password in database;
 3. Get social connetions information from users, also you can send notification via 3rd party website.
 
 There are also some potential risk may harm your webiste:
@@ -25,3 +25,12 @@ Facebook has already changed their ways of loading javascript SDK to aysnc. But 
 3. **Easily deploy and custom style.**
 All you have to do is paste a snippet javascript and css code into your website, and then a little extra backend work such as read/write from database.
 
+Something you should prepare beforehand:
+
+1. Your own website required a register/login function.
+2. Create a Facebook app and write down  it's ID.
+3. Create a Webio app and write down it's ID.
+4. A user table in database used for storing 3rd party user informatin.
+5. Skill of write backend language and rewrite CSS to adapt your own style.
+
+How to user:
