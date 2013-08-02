@@ -62,4 +62,4 @@ FAQs:
 >
 >Q: How to logout?
 >
->A: User has to remove the app authorization from [facebook](https://www.facebook.com/appcenter/my) and [weibo](http://app.weibo.com/my)
+>A: User has to remove the app authorization from [facebook](https://www.facebook.com/appcenter/my) and [weibo](http://app.weibo.com/my).
