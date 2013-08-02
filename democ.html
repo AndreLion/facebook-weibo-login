@@ -2,11 +2,14 @@
 <html>
 	<head>
 		<title>Facebook and Weibo Login via Open API OAuth</title>
-		<link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css">
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-		<div class="dropdown login-wrap">
+		<h1 class="text-center">Demo of Facebook and Weibo Login Javascript Component</h1>
+		<!--↓⇣↓⇣↓⇣↓⇣↓⇣↓⇣↓⇣↓⇣↓⇣↓⇣↓⇣Copy the HTML Code Below↓⇣↓⇣↓⇣↓⇣↓⇣↓⇣↓⇣↓⇣↓⇣↓⇣↓⇣-->
+		<div class="dropdown login-wrap text-center">
 			<button type="button" class="btn btn-primary btn-large dropdown-toggle" data-toggle="dropdown">Login</button>
 			<div class="dropdown-menu" role="menu">
 				<div class="facebook_connect_btn">
@@ -19,20 +22,41 @@
 				</div>
 				<div id="wb_connect_btn">Loading</div>
 			</div>
+			<div class="profile">
+				<img class="avatar" height="50" width="50" />
+				<span class="name"></span>
+			</div>
 		</div>
+		<!--↑⇡↑⇡↑⇡↑⇡↑⇡↑⇡↑⇡↑⇡↑⇡↑⇡↑⇡Copy the HTML Code Up↑⇡↑⇡↑⇡↑⇡↑⇡↑⇡↑⇡↑⇡↑⇡↑⇡↑⇡-->
+		<div class="github text-center">
+			<a href="https://github.com/AndreLion/facebook-weibo-login">Read the Documentation on Github</a>
+		</div>
+		<div id="fb-root"></div>
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-		<script src="http://getbootstrap.com/dist/js/bootstrap.js"></script>
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
 		<script>
+			//↓⇣↓⇣↓⇣↓⇣↓⇣↓⇣↓⇣↓⇣↓⇣↓⇣↓⇣Copy the Javascript Code Below↓⇣↓⇣↓⇣↓⇣↓⇣↓⇣↓⇣↓⇣↓⇣↓⇣↓⇣
 			(function(){
-				var FACEBOOK_APP_ID = 'your_facebook_id',
-					YOUR_WEIBO_APP_KEY = '0000000000',
-					ready = {
-					facebook : false,
-					weibo : false
-				};
+				var YOUR_FACEBOOK_APP_ID = 'YOUR_FACEBOOK_APP_ID',
+					YOUR_WEIBO_APP_KEY = 'YOUR_WEIBO_APP_KEY',
+					loginStatus = {
+						weibo:false,
+						facebook:false
+					},
+					loggedin = function(profile){
+						var wrap = $('.profile');
+						wrap.find('.avatar').attr({src:profile.avatar});
+						wrap.find('.name').text(profile.name);
+						$('.login-wrap').addClass('logged-in');
+						console.log('User from '+profile.source+' (ID: '+profile.id+') has logged in.');
+						if(loginStatus.facebook || loginStatus.weibo){
+							console.log('Facebook and Weibo logged in at same time. Ask for merging process...');
+						}
+						loginStatus[profile.source] = true;
+					};
 				window.fbAsyncInit = function() {
 					FB.init({
-						appId      : FACEBOOK_APP_ID,
+						appId      : YOUR_FACEBOOK_APP_ID,
 						channelUrl : '//YOUR_APP_DOMAIN/channel.html',
 						status     : true,
 						cookie     : true,
@@ -41,10 +65,13 @@
 
 					FB.Event.subscribe('auth.authResponseChange', function(response) {
 						if (response.status === 'connected') {
-							console.log('Welcome!  Fetching your information.... ');
-							FB.api('/me', function(response) {
-								console.log('Good to see you, ' + response.name + '.');
-								console.log(response);
+							FB.api('/me?fields=picture,id,name', function(response) {
+								loggedin({
+									source:'facebook',
+									id:response.id,
+									name:response.name,
+									avatar:response.picture.data.url
+								});
 							});
 						} else if (response.status === 'not_authorized') {
 							FB.login();
@@ -60,13 +87,15 @@
 							id: "wb_connect_btn",	
 							type:"2,2",
 							callback : {
-								login:function(o){	//登录后的回调函数
-									console.log('loged in');
-									console.log(arguments);
+								login:function(response){
+									loggedin({
+										source:'weibo',
+										id:response.id,
+										name:response.screen_name,
+										avatar:response.profile_image_url
+									});
 								},	
-								logout:function(){	//退出后的回调函数
-									console.log('loged out');
-									console.log(arguments);
+								logout:function(){
 								}
 							}
 						});
@@ -84,14 +113,12 @@
 				$('.facebook_connect_btn').on('click',function(ev){
 					FB.login(function(response){
 						if (response.authResponse) {
-							console.log('login success');
 						}else{
-							console.log('login deny');
 						}
-						console.log(arguments);
 					});
 				});
 			})();
+			//↑⇡↑⇡↑⇡↑⇡↑⇡↑⇡↑⇡↑⇡↑⇡↑⇡↑⇡Copy the Javascript Code Up↑⇡↑⇡↑⇡↑⇡↑⇡↑⇡↑⇡↑⇡↑⇡↑⇡↑⇡
 		</script>
 	</body>
 </html>
