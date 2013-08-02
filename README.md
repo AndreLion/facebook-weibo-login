@@ -59,3 +59,7 @@ FAQs:
 >Q: I can't visit Facebook!
 >
 >A: Ask Schoolmaster Fang.
+>
+>Q: How to logout?
+>
+>A: User has to remove the app authorization from [facebook](https://www.facebook.com/appcenter/my) and [weibo](http://app.weibo.com/my)
