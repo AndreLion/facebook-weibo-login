@@ -1,6 +1,6 @@
 Facebook and Weibo Login
 ====================
-**a.k.a. FWL.** A combiniation of Facebook and Weibo javascript SDK with 3rd party login function.
+**a.k.a. FWL.** A combiniation of Facebook and [Weibo](http://open.weibo.com/widget/js#connect) javascript SDK with 3rd party login function.
 
 This is a javascript component combined with Facebook SDK and Weibo SDK. Help you deploy 3rd party website login function to your own website.
 
@@ -29,7 +29,7 @@ Something you should prepare beforehand:
 
 1. Your own website required a register/login function.
 2. Create a Facebook app and write down  it's ID.
-3. Create a Webio app and write down it's ID.
+3. Create a Webio app and write down it's ID. [via](http://open.weibo.com/wiki/%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97)
 4. A user table in database used for storing 3rd party user informatin.
 5. Skill of write backend language and rewrite CSS to adapt your own style.
 
