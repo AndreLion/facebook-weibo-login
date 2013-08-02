@@ -4,6 +4,8 @@ Facebook and Weibo Login
 
 Please check [Demo](http://last.mile.navigator.erip.me/github/facebook-weibo-login/democ.html) first.
 
+![Demo Screenshot](https://raw.github.com/AndreLion/facebook-weibo-login/master/screenshot.png "Demo Screenshot")
+
 This is a javascript component combined with Facebook SDK and Weibo SDK. Help you deploy 3rd party website login function to your own website.
 
 Login with 3rd party website members will help you:
