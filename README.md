@@ -29,8 +29,15 @@ Something you should prepare beforehand:
 
 1. Your own website required a register/login function.
 2. Create a Facebook app and write down  it's ID.
-3. Create a Webio app and write down it's ID. [via](http://open.weibo.com/wiki/%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97)
+3. Create a Webio app and write down it's ID. [link](http://open.weibo.com/wiki/%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97)
 4. A user table in database used for storing 3rd party user informatin.
 5. Skill of write backend language and rewrite CSS to adapt your own style.
 
 How to user:
+
+1. Check the Demo and it's source code.
+2. Copy the HTML code and paste them to the right place on your page.
+3. Copy the Javascript code and paste them before </body> tag.
+4. (Optional)Add the code in CSS file into your stylesheet, or write your own stylesheet to fit your website style.
+5. (Optional)If you use Javascript module loader, package the Javascript code into a module.
+6. (Optional)Optimize your code, make them graceful.
